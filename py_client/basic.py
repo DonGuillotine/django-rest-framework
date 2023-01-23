@@ -6,7 +6,7 @@ endpoint = 'http://localhost:8000/api/'
 
 # Getting data from the endpoint
 # params is the query parameters i.e /api?abc=123
-response_data = requests.get(endpoint, params={"abc": 123}, json={"query": "Backend Developer"})
+response_data = requests.post(endpoint, params={"abc": 123}, json={"query": "Backend Developer"})
 
 # response_data.text, status_code, json() etc
 # print(response_data.text)
