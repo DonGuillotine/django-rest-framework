@@ -4,7 +4,7 @@ from django.forms.models import model_to_dict
 from product.models import ProductModel
 from product.serializers import ProductSerializer
 
-@api_view(['GET'])
+@api_view(['POST'])
 def api_view(request):
     instance = ProductModel.objects.all().order_by('?').first()
     data = {}
