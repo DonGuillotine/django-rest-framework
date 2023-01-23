@@ -7,5 +7,6 @@ class ProductSerializer(serializers.ModelSerializer):
         model = ProductModel
         fields = ['title', 'content', 'price', 'sale_price', 'my_discount']
 
+    # obj is the instance of the model. So all properties are available
     def get_my_discount(self, obj):
         return obj.get_discount()
