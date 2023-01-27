@@ -9,4 +9,8 @@ class ProductSerializer(serializers.ModelSerializer):
 
     # obj is the instance of the model. So all properties are available
     def get_my_discount(self, obj):
+        if not hasattr(obj, 'id'):
+            return None
+        if not isinstance(obj, ProductModel):
+            return None
         return obj.get_discount()

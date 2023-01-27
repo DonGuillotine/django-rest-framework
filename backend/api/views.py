@@ -6,5 +6,8 @@ from product.serializers import ProductSerializer
 
 @api_view(['POST'])
 def api_view(request):
-    data = request.data
-    return Response(data)
+    # To view error messages
+    serializer = ProductSerializer(data=request.data)
+    if serializer.is_valid(raise_exception=True):
+        instance = serializer.save()
+        return Response(serializer.data)
