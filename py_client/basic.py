@@ -1,3 +1,4 @@
+# Always remember to activate virtual env
 import requests
 
 # An endpoint i.e url
