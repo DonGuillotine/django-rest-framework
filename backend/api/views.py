@@ -6,9 +6,5 @@ from product.serializers import ProductSerializer
 
 @api_view(['POST'])
 def api_view(request):
-    instance = ProductModel.objects.all().order_by('?').first()
-    data = {}
-    if instance:
-        data = ProductSerializer(instance).data
-        # data = model_to_dict(instance, fields=['id', 'title'])
+    data = request.data
     return Response(data)
