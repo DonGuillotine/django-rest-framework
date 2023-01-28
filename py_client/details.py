@@ -2,6 +2,8 @@ import requests
 
 endpoint = 'http://localhost:8000/api/products/1'
 
-data_response = requests.get(endpoint)
+returned_data = requests.get(endpoint)
 
-print(data_response.json())
+returned_data.raise_for_status()
+
+print(returned_data.json())
