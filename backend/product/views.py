@@ -30,7 +30,7 @@ class ProductDetailAPIView(generics.RetrieveAPIView):
 #     serializer_class = ProductSerializer
 
 
-# Using Function Based Views For Create Retrieve or List
+# Using Function Based Views For Create, Retrieve or List
 @api_view(['GET', 'POST'])
 def product_alternate_view(request, pk=None):
     method = request.method
